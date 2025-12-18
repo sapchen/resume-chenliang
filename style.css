@@ -84,7 +84,7 @@ body {
 }
 
 .name {
-    font-size: 2.2rem; /* 缩小名字字体 */
+    font-size: 1.6rem; /* 缩小名字字体 */
     font-weight: 700;
     margin-bottom: 0.3rem; /* 缩小间距 */
     background: var(--gradient);
@@ -316,7 +316,7 @@ body {
 }
 
 .timeline-item li::before {
-    content: '▸';
+    content: '▸▸';
     position: absolute;
     left: 0;
     color: var(--primary-color);
@@ -521,57 +521,6 @@ body {
     50% { opacity: 0; }
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .content-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem; /* 缩小间距 */
-    }
-    
-    .name {
-        font-size: 1.8rem; /* 缩小字体 */
-    }
-    
-    .container {
-        padding: 1rem; /* 缩小内边距 */
-    }
-    
-    .project-grid {
-        grid-template-columns: 1fr;
-        gap: 0.8rem; /* 缩小间距 */
-    }
-    
-    .card {
-        margin-bottom: 1rem; /* 缩小间距 */
-        padding: 1rem; /* 缩小内边距 */
-    }
-}
-
-@media (max-width: 480px) {
-    .timeline-header {
-        flex-direction: column;
-        gap: 0.3rem; /* 缩小间距 */
-    }
-    
-    .date {
-        margin-left: 0;
-    }
-    
-    .name {
-        font-size: 1.6rem; /* 缩小字体 */
-    }
-    
-    .avatar {
-        width: 80px; /* 缩小头像 */
-        height: 80px;
-    }
-    
-    .header {
-        padding: 1.5rem 0; /* 缩小内边距 */
-        margin-bottom: 1.5rem; /* 缩小间距 */
-    }
-}
-
 /* 荣誉奖项样式 */
 .honors-grid {
     display: flex;
@@ -635,8 +584,208 @@ body {
     line-height: 1.4;
 }
 
-/* 响应式设计调整 */
+/* 专业资格证书样式 - 与项目经验配色一致 */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem; /* 缩小间距 */
+    margin-top: 1rem;
+}
+
+.cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem; /* 缩小间距 */
+    padding: 1rem; /* 缩小内边距 */
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px; /* 缩小圆角 */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--primary-color); /* 使用主色调 */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.cert-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px -12px var(--shadow);
+}
+
+.cert-item:hover::before {
+    transform: scaleX(1);
+}
+
+.cert-icon {
+    color: var(--primary-color);
+    background: rgba(0, 217, 255, 0.1);
+    width: 40px; /* 缩小尺寸 */
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem; /* 缩小图标 */
+    border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.cert-content {
+    flex: 1;
+}
+
+.cert-content h3 {
+    color: var(--text-primary);
+    font-size: 1rem; /* 缩小字体 */
+    margin-bottom: 0.4rem; /* 缩小间距 */
+    font-weight: 600;
+}
+
+.cert-org {
+    color: var(--primary-color);
+    font-size: 0.85rem; /* 缩小字体 */
+    margin-bottom: 0.3rem; /* 缩小间距 */
+    font-weight: 500;
+}
+
+.cert-date {
+    color: var(--text-secondary);
+    font-size: 0.8rem; /* 缩小字体 */
+    margin-bottom: 0.3rem; /* 缩小间距 */
+}
+
+.cert-desc {
+    color: var(--text-secondary);
+    font-size: 0.8rem; /* 缩小字体 */
+    line-height: 1.4;
+}
+
+/* 职称样式 */
+.title-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem; /* 缩小间距 */
+    margin-top: 1rem;
+}
+
+.title-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem; /* 缩小间距 */
+    padding: 1rem; /* 缩小内边距 */
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px; /* 缩小圆角 */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--secondary-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.title-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.title-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 25px -12px var(--shadow);
+}
+
+.title-item:hover::before {
+    transform: scaleX(1);
+}
+
+.title-icon {
+    color: var(--secondary-color);
+    background: rgba(108, 99, 255, 0.1);
+    width: 40px; /* 缩小尺寸 */
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem; /* 缩小图标 */
+    border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.title-content {
+    flex: 1;
+}
+
+.title-content h3 {
+    color: var(--text-primary);
+    font-size: 1rem; /* 缩小字体 */
+    margin-bottom: 0.4rem; /* 缩小间距 */
+    font-weight: 600;
+}
+
+.title-org {
+    color: var(--secondary-color);
+    font-size: 0.85rem; /* 缩小字体 */
+    margin-bottom: 0.3rem; /* 缩小间距 */
+    font-weight: 500;
+}
+
+.title-date {
+    color: var(--text-secondary);
+    font-size: 0.8rem; /* 缩小字体 */
+    margin-bottom: 0.3rem; /* 缩小间距 */
+}
+
+.title-desc {
+    color: var(--text-secondary);
+    font-size: 0.8rem; /* 缩小字体 */
+    line-height: 1.4;
+}
+
+/* 响应式设计 */
 @media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem; /* 缩小间距 */
+    }
+    
+    .name {
+        font-size: 1.8rem; /* 缩小字体 */
+    }
+    
+    .container {
+        padding: 1rem; /* 缩小内边距 */
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem; /* 缩小间距 */
+    }
+    
+    .card {
+        margin-bottom: 1rem; /* 缩小间距 */
+        padding: 1rem; /* 缩小内边距 */
+    }
+    
     .honor-item {
         flex-direction: column;
         text-align: center;
@@ -649,5 +798,91 @@ body {
     
     .honor-item:hover {
         transform: translateY(-3px);
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem; /* 缩小间距 */
+    }
+    
+    .cert-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .cert-icon {
+        align-self: center;
+    }
+    
+    .cert-item:hover {
+        transform: translateY(-2px);
+    }
+    
+    .title-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .title-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .title-icon {
+        align-self: center;
+    }
+    
+    .title-item:hover {
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-header {
+        flex-direction: column;
+        gap: 0.3rem; /* 缩小间距 */
+    }
+    
+    .date {
+        margin-left: 0;
+    }
+    
+    .name {
+        font-size: 1.6rem; /* 缩小字体 */
+    }
+    
+    .avatar {
+        width: 80px; /* 缩小头像 */
+        height: 80px;
+    }
+    
+    .header {
+        padding: 1.5rem 0; /* 缩小内边距 */
+        margin-bottom: 1.5rem; /* 缩小间距 */
+    }
+    
+    .cert-item {
+        padding: 0.8rem; /* 缩小内边距 */
+    }
+    
+    .cert-icon {
+        width: 35px; /* 缩小尺寸 */
+        height: 35px;
+        font-size: 0.9rem; /* 缩小图标 */
+    }
+    
+    .title-item {
+        padding: 1rem;
+    }
+    
+    .title-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .title-content h3 {
+        font-size: 1.1rem;
     }
 }
