@@ -102,42 +102,72 @@ document.addEventListener('DOMContentLoaded', function() {
         new TerminalSimulator(terminalText);
     }
 
-    // 初始化粒子效果
-    if (window.particlesJS) {
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#00d9ff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.3, random: true },
-                size: { value: 3, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#6c63ff",
-                    opacity: 0.2,
-                    width: 1
+    // 初始化粒子效果（修改为银色主题）
+if (window.particlesJS) {
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 100, density: { enable: true, value_area: 800 } },
+            color: { 
+                value: ["#c0c0c0", "#d4d4d4", "#e8e8e8", "#f0f0f0"] // 银色系渐变
+            },
+            shape: { 
+                type: ["circle", "triangle", "polygon"],
+                polygon: { nb_sides: 6 }
+            },
+            opacity: { 
+                value: 0.6, 
+                random: true,
+                anim: { enable: true, speed: 1, opacity_min: 0.3 }
+            },
+            size: { 
+                value: 4, 
+                random: true,
+                anim: { enable: true, speed: 2, size_min: 1 }
+            },
+            line_linked: {
+                enable: true,
+                distance: 120,
+                color: "#ffffff", // 白色连接线
+                opacity: 0.3,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 1.5, // 稍微加快速度
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: { 
+                    enable: true, 
+                    mode: "grab" // 改为抓取效果更炫
                 },
-                move: {
-                    enable: true,
-                    speed: 1,
-                    direction: "none",
-                    random: true,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false
+                onclick: { 
+                    enable: true, 
+                    mode: "push" 
                 }
             },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" }
+            modes: {
+                grab: {
+                    distance: 140,
+                    line_linked: {
+                        opacity: 0.8
+                    }
+                },
+                push: {
+                    particles_nb: 4
                 }
-            },
-            retina_detect: true
-        });
-    }
+            }
+        },
+        retina_detect: true
+    });
+}
 
     // 滚动动画
     const observerOptions = {
