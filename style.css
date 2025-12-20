@@ -776,11 +776,11 @@ body {
     }
     
     .tech-advantages-header h3 {
-        font-size: 1.1rem;
+        font-size: 0.8rem;
     }
     
     .tech-advantages-content p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         text-align: left;
     }
 
@@ -790,7 +790,7 @@ body {
     }
     
     .name {
-        font-size: 1.8rem; /* 缩小字体 */
+        font-size: 1.6rem; /* 缩小字体 */
     }
     
     .container {
@@ -949,7 +949,7 @@ body {
 
 .tech-advantages-header i {
     color: var(--accent);
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     background: rgba(100, 255, 218, 0.1);
     width: 40px;
     height: 40px;
@@ -962,7 +962,7 @@ body {
 
 .tech-advantages-header h3 {
     color: var(--text-primary);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
     background: linear-gradient(135deg, var(--primary-color), var(--accent));
@@ -978,7 +978,7 @@ body {
 
 .tech-advantages-content p {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1.6;
     margin: 0;
     text-align: justify;
