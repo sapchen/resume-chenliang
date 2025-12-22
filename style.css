@@ -776,11 +776,11 @@ body {
     }
     
     .tech-advantages-header h3 {
-        font-size: 0.8rem;
+        font-size: 1.1rem;
     }
     
     .tech-advantages-content p {
-        font-size: 0.7rem;
+        font-size: 1.0rem;
         text-align: left;
     }
 
@@ -790,16 +790,16 @@ body {
     }
     
     .name {
-        font-size: 1.6rem; /* 缩小字体 */
+        font-size: 1.8rem; /* 缩小字体 */
     }
     
     .container {
-        padding: 1rem; /* 缩小内边距 */
+        padding: 1.2rem; /* 缩小内边距 */
     }
     
     .project-grid {
         grid-template-columns: 1fr;
-        gap: 0.8rem; /* 缩小间距 */
+        gap: 1.1rem; /* 缩小间距 */
     }
     
     .card {
