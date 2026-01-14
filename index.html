@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .footer-beian-icon {
+            width: 20px;      /* 宽度略微增加 */
+            height: 20px;     /* 高度增加，让图标更高 */
+            vertical-align: middle;
+            object-fit: contain; /* 保持图标比例 */
+        }
+        .icp {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #7a8599;
+        }
+        .icp a {
+            color: #7a8599;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .icp a:hover {
+            color: #29c4ff;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -142,6 +166,14 @@
                             </div>
                             <div class="project-card">
                                 <div class="project-header">
+                                    <h3>md转换json小工具 </h3>
+                                    <span class="project-tag">JavaScript</span>
+                                </div>
+                                <p  class="cert-desc">.md文件自动转换.json文件</p>
+                                <a href="https://github.com/sapchen/md2json" class="project-link"><i class="fab fa-github"></i> 查看源码</a>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-header">
                                     <h3>全自动潮汐预报系统</h3>
                                     <span class="project-tag">python</span>
                                 </div>
@@ -243,7 +275,11 @@
         </main>
         <!-- 页脚 -->
         <footer class="footer">
-            <p class="copyright">© 2025 powered by _061837@bupt. 最后更新: <span id="current-date"></span></p>
+            <p class="copyright">© 2026 宸良手纪 最后更新: <span id="current-date"></span></p>
+            <div class="icp">
+                <a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2026000687号-1</a>
+                <a href="https://beian.mps.gov.cn/#/query/webSearch?code=35010202002051" rel="noreferrer" target="_blank"><img src="备案图标.png" alt="公安备案图标" class="footer-beian-icon"> 闽公网安备35010202002051号</a>
+            </div>
         </footer>
     </div>
     <!-- 浮动粒子特效 -->
