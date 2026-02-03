@@ -9,7 +9,7 @@
     --primary-color: #00d9ff;
     --primary-dark: #0099cc;
     --secondary-color: #6c63ff;
-    --dark-bg: #0a192f;
+    --dark-bg: #000000;
     --card-bg: rgba(17, 34, 64, 0.35);
     --text-primary: #e6f1ff;
     --text-secondary: #8892b0;
@@ -55,8 +55,8 @@ body {
     background-image: 
         linear-gradient(var(--border-color) 1px, transparent 1px),
         linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.3;
+    background-size: 35px 35px;
+    opacity: 0.45;
     z-index: -1;
 }
 
@@ -982,4 +982,27 @@ body {
     line-height: 1.6;
     margin: 0;
     text-align: justify;
+}
+
+.footer-beian-icon {
+    width: 20px;      /* 宽度略微增加 */
+    height: 20px;     /* 高度增加，让图标更高 */
+    vertical-align: middle;
+    object-fit: contain; /* 保持图标比例 */
+}
+.icp {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #7a8599;
+}
+.icp a {
+    color: #7a8599;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.icp a:hover {
+    color: #29c4ff;
 }
