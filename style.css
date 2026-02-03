@@ -47,7 +47,7 @@ body {
 }
 
 .tech-grid {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -56,7 +56,7 @@ body {
         linear-gradient(var(--border-color) 1px, transparent 1px),
         linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
     background-size: 30px 30px;
-    opacity: 0.1;
+    opacity: 0.3;
     z-index: -1;
 }
 
