@@ -196,41 +196,6 @@ body {
     font-size: 0.8rem; /* 缩小图标 */
 }
 
-/* 技能标签 */
-.skill-category {
-    margin-bottom: 1rem; /* 缩小间距 */
-}
-
-.skill-category h3 {
-    color: var(--text-secondary);
-    font-size: 0.8rem; /* 缩小字体 */
-    font-weight: 500;
-    margin-bottom: 0.4rem; /* 缩小间距 */
-    text-transform: uppercase;
-    letter-spacing: 0.5px; /* 缩小字间距 */
-}
-
-.skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem; /* 缩小间距 */
-}
-
-.skill-tag {
-    background: rgba(100, 255, 218, 0.1);
-    color: var(--accent);
-    padding: 0.2rem 0.6rem; /* 缩小内边距 */
-    border-radius: 12px; /* 缩小圆角 */
-    font-size: 0.75rem; /* 缩小字体 */
-    border: 1px solid rgba(100, 255, 218, 0.2);
-    transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-    background: rgba(100, 255, 218, 0.2);
-    transform: translateY(-1px); /* 缩小悬浮位移 */
-}
-
 /* 语言能力 */
 .language-item {
     margin-bottom: 0.8rem; /* 缩小间距 */
@@ -420,58 +385,6 @@ body {
     font-style: italic;
 }
 
-/* 终端样式 */
-.terminal {
-    background: #1a1a1a;
-    border-radius: 6px; /* 缩小圆角 */
-    overflow: hidden;
-    margin-bottom: 1.2rem; /* 缩小间距 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* 调整阴影 */
-}
-
-.terminal-header {
-    background: #333;
-    padding: 0.4rem 0.8rem; /* 缩小内边距 */
-    display: flex;
-    align-items: center;
-    gap: 0.4rem; /* 缩小间距 */
-}
-
-.terminal-dot {
-    width: 10px; /* 缩小圆点 */
-    height: 10px;
-    border-radius: 50%;
-}
-
-.terminal-dot.red { background: #ff5f56; }
-.terminal-dot.yellow { background: #ffbd2e; }
-.terminal-dot.green { background: #27ca3f; }
-
-.terminal-title {
-    color: #aaa;
-    font-size: 0.8rem; /* 缩小字体 */
-    margin-left: 0.8rem; /* 缩小间距 */
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.terminal-body {
-    padding: 0.8rem; /* 缩小内边距 */
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem; /* 缩小字体 */
-    min-height: 50px; /* 缩小最小高度 */
-}
-
-.prompt {
-    color: #27ca3f;
-    margin-right: 0.4rem; /* 缩小间距 */
-}
-
-.cursor {
-    animation: blink 1s infinite;
-    color: #00d9ff;
-    font-weight: bold;
-}
-
 /* 页脚 */
 .footer {
     text-align: center;
@@ -481,7 +394,6 @@ body {
 
 .copyright {
     color: var(--text-secondary);
-    font-size: 0.8rem; /* 缩小字体 */
 }
 
 /* 粒子特效 */
@@ -532,15 +444,36 @@ body {
     align-items: flex-start;
     gap: 1rem;
     padding: 1rem;
+    position: relative;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 8px;
     border-left: 3px solid var(--primary-color);
     transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.honor-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient);
+    border-radius: 8px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 .honor-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateX(5px);
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);  /* 添加背景色变化 */
+    box-shadow: 0 8px 25px -12px var(--shadow); /* 添加阴影 */
+}
+
+.honor-item:hover::before {
+    transform: scaleX(1);
 }
 
 .honor-icon {
@@ -708,7 +641,7 @@ body {
 .title-item:hover {
     background: rgba(255, 255, 255, 0.05);
     transform: translateY(-2px);
-    border-color: var(--secondary-color);
+    border-color: var(--primary-color);
     box-shadow: 0 8px 25px -12px var(--shadow);
 }
 
